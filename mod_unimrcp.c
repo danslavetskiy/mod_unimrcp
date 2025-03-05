@@ -1877,6 +1877,9 @@ static apt_bool_t speech_on_channel_add(mrcp_application_t *application, mrcp_se
 
 	/* check status */
 	if (!session || !schannel || status != MRCP_SIG_STATUS_CODE_SUCCESS) {
+		// TO BE REMOVED
+		switch_log_printf(SWITCH_CHANNEL_UUID_LOG(schannel->session_uuid), SWITCH_LOG_ERROR, "session: %s schannel: %s status: %d 	\n", session ? "OK" : "null", schannel ? "OK" : "null", status);
+
 		goto error;
 	}
 
