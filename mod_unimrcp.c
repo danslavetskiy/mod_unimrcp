@@ -1890,6 +1890,9 @@ static apt_bool_t speech_on_channel_add(mrcp_application_t *application, mrcp_se
 		descriptor = mrcp_application_source_descriptor_get(channel);
 	}
 	if (!descriptor) {
+		// TO BE REMOVED
+		switch_log_printf(SWITCH_CHANNEL_UUID_LOG(schannel->session_uuid), SWITCH_LOG_ERROR, "descriptor: %s 	\n", descriptor ? "OK" : "null");
+
 		goto error;
 	}
 
